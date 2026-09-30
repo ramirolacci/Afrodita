@@ -1,9 +1,32 @@
-import React from 'react';
+import React, { useState, useEffect } from 'react';
 import { motion } from 'framer-motion';
 import { ArrowRight, Sparkles, ChevronDown, ShieldCheck } from 'lucide-react';
 import './Hero.css';
 
+function useCountUp(end, duration = 2000) {
+  const [count, setCount] = useState(0);
+
+  useEffect(() => {
+    let startTimestamp = null;
+    const step = (timestamp) => {
+      if (!startTimestamp) startTimestamp = timestamp;
+      const progress = Math.min((timestamp - startTimestamp) / duration, 1);
+      const easeProgress = 1 - (1 - progress) * (1 - progress);
+      setCount(Math.floor(easeProgress * end));
+      if (progress < 1) {
+        window.requestAnimationFrame(step);
+      }
+    };
+    window.requestAnimationFrame(step);
+  }, [end, duration]);
+
+  return count;
+}
+
 export default function Hero({ onOpenCart }) {
+  const count1000 = useCountUp(1000, 2200);
+  const count100 = useCountUp(100, 2200);
+
   const scrollToCatalog = () => {
     const catalog = document.getElementById('products');
     if (catalog) {
@@ -45,12 +68,12 @@ export default function Hero({ onOpenCart }) {
 
           <div className="hero-stats">
             <div className="stat-item">
-              <strong>+1,000</strong>
+              <strong>+{count1000.toLocaleString('en-US')}</strong>
               <span>Prendas Entregadas</span>
             </div>
             <div className="stat-divider"></div>
             <div className="stat-item">
-              <strong>100%</strong>
+              <strong>{count100}%</strong>
               <span>Calidad Garantizada</span>
             </div>
             <div className="stat-divider"></div>
