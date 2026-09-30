@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { MapPin, Clock, Mail, Send, CheckCircle2, Sparkles } from 'lucide-react';
+import { MapPin, Clock, Mail, Send, CheckCircle2, Sparkles, Gift, PackageCheck, HeartHandshake, Crown } from 'lucide-react';
 import ScrollReveal from './ScrollReveal';
 import confetti from 'canvas-confetti';
 import './Contact.css';
@@ -33,7 +33,7 @@ export default function Contact() {
 
       <ScrollReveal direction="up" delay={0.1}>
         <div className="contact-split-wrapper glass-panel">
-          {/* Left Column: Newsletter Form */}
+          {/* Left Column: Newsletter Form + 4 Feature Cards */}
           <div className="contact-left-newsletter">
             <div className="subtitle-tag">
               <Sparkles size={16} /> Comunidad Afrodita
@@ -50,12 +50,12 @@ export default function Contact() {
               </div>
             )}
 
-            <form onSubmit={handleNewsletterSubmit} className="newsletter-form">
+            <form onSubmit={handleNewsletterSubmit} className="newsletter-inline-form">
               <div className="inputBox">
                 <Mail className="input-icon" size={20} />
                 <input
                   type="email"
-                  placeholder="Tu correo electrónico..."
+                  placeholder="Ingresa tu correo electrónico"
                   required
                   value={newsletterEmail}
                   onChange={(e) => setNewsletterEmail(e.target.value)}
@@ -63,12 +63,47 @@ export default function Contact() {
               </div>
 
               <button type="submit" className="btn newsletter-btn">
-                <Send size={18} /> Suscribirme
+                <Send size={16} /> Suscribirme
               </button>
             </form>
+
+            {/* 4 Feature Cards */}
+            <div className="newsletter-features-row">
+              <div className="newsletter-feature-card">
+                <div className="nft-icon"><Gift size={20} /></div>
+                <div>
+                  <h4>Descuentos VIP</h4>
+                  <p>Promociones secretas exclusivas.</p>
+                </div>
+              </div>
+
+              <div className="newsletter-feature-card">
+                <div className="nft-icon"><PackageCheck size={20} /></div>
+                <div>
+                  <h4>Envíos Discretos</h4>
+                  <p>Empaque seguro y privado.</p>
+                </div>
+              </div>
+
+              <div className="newsletter-feature-card">
+                <div className="nft-icon"><HeartHandshake size={20} /></div>
+                <div>
+                  <h4>Asesoría Única</h4>
+                  <p>Guía de talles personalizada.</p>
+                </div>
+              </div>
+
+              <div className="newsletter-feature-card">
+                <div className="nft-icon"><Crown size={20} /></div>
+                <div>
+                  <h4>Colecciones Exclusivas</h4>
+                  <p>Acceso anticipado a lanzamientos.</p>
+                </div>
+              </div>
+            </div>
           </div>
 
-          {/* Right Column: Heading Text + Info Cards (Location & Hours) + Square Google Map */}
+          {/* Right Column: Heading Text + Info Cards + Square Map */}
           <div className="contact-right-info">
             <div className="contact-right-header">
               <div className="subtitle-tag">
