@@ -197,6 +197,18 @@ importers:
 
   .:
     dependencies:
+      '@gsap/react':
+        specifier: ^2.1.2
+        version: 2.1.2(gsap@3.15.0)(react@19.3.0)
+      canvas-confetti:
+        specifier: ^1.9.4
+        version: 1.9.4
+      framer-motion:
+        specifier: ^13.4.6
+        version: 13.4.6(react-dom@19.3.0(react@19.3.0))(react@19.3.0)
+      gsap:
+        specifier: ^3.15.0
+        version: 3.15.0
       lucide-react:
         specifier: ^1.49.0
         version: 1.49.0(react@19.3.0)
@@ -215,6 +227,12 @@ importers:
         version: 8.3.1
 
 packages:
+
+  '@gsap/react@2.1.2':
+    resolution: {integrity: sha512-JqliybO1837UcgH2hVOM4VO+38APk3ECNrsuSM4MuXp+rbf+/2IG2K1YJiqfTcXQHH7XlA0m3ykniFYstfq0Iw==}
+    peerDependencies:
+      gsap: ^3.12.5
+      react: '>=17'
 
   '@oxc-project/types@0.151.0':
     resolution: {integrity: sha512-J1yXrIlNDZVzE3ada310xeAw7nH8yCAyLPuUIsjKatFPmfn5bS1oW+cM+QsGOtVWd5nhSpbwZWx/rue+r5Z+PA==}
@@ -334,6 +352,9 @@ packages:
       oxc-transform-react:
         optional: true
 
+  canvas-confetti@1.9.4:
+    resolution: {integrity: sha512-yxQbJkAVrFXWNbTUjPqjF7G+g6pDotOUHGbkZq2NELZUMDpiJ85rIEazVb8GTaAptNW2miJAXbs1BtioA251Pw==}
+
   detect-libc@2.1.2:
     resolution: {integrity: sha512-Btj2BOOO83o3WyH59e8MgXsxEQVcarkUOpEYrubB0urwnN10yQ364rsiByU11nZlqWYZm05i/of7io4mzihBtQ==}
     engines: {node: '>=8'}
@@ -347,10 +368,24 @@ packages:
       picomatch:
         optional: true
 
+  framer-motion@13.4.6:
+    resolution: {integrity: sha512-TwKWt2CC8rjhARzwV00TZIh04ipumSAqyKM/JZmS+urdncSHg6wTF/mfj/Fd6Oi2W01TZSWsiA3uxXDrXZtKyw==}
+    peerDependencies:
+      react: ^18.0.0 || ^19.0.0
+      react-dom: ^18.0.0 || ^19.0.0
+    peerDependenciesMeta:
+      react:
+        optional: true
+      react-dom:
+        optional: true
+
   fsevents@2.3.3:
     resolution: {integrity: sha512-5xoDfX+fL7faATnagmWPpbFtwh/R77WmMMqqHGS65C3vvB0YHrgF+B1YmZ3441tMj5n63k0212XNoJwzlhffQw==}
     engines: {node: ^8.16.0 || ^10.6.0 || >=11.0.0}
     os: [darwin]
+
+  gsap@3.15.0:
+    resolution: {integrity: sha512-dMW4CWBTUK1AEEDeZc1g4xpPGIrSf9fJF960qbTZmN/QwZIWY5wgliS6JWl9/25fpTGJrMRtSjGtOmPnfjZB+A==}
 
   lightningcss-android-arm64@1.33.0:
     resolution: {integrity: sha512-gEpRTalKdosp4Bb8qWtc2iOgE5SeIHlpS1up9bFq2wAyYhl1UdTObYiHe98zEM9SQvSoqQZ1IQD0JNpg3Ml5pg==}
@@ -435,6 +470,12 @@ packages:
       '@types/react':
         optional: true
 
+  motion-dom@13.4.5:
+    resolution: {integrity: sha512-p63p2Doq+US/O5wADauIPUVx0/eONHMLPzsudBM9XMWRuBQLXogdxH0vwIA8WYQZw864pyzoV723xoDqakwWTg==}
+
+  motion-utils@13.3.0:
+    resolution: {integrity: sha512-sgSschQp7EseHInIlR7hBbMuvet3RA0bs28KPZAXJcGKGdxHGvh1ogpYDilY3bOMtl73EqPNmp75sAKHYPU5sg==}
+
   nanoid@3.3.19:
     resolution: {integrity: sha512-Y2tUNy4ouw6tq5oDSKeQYGOyhkUBhNOcGV/02KC+6kd9eDGqdZd++mjMiIDilrBYvjEnCYvVtsuHCuP+okSfug==}
     engines: {node: ^10 || ^12 || ^13.7 || ^14 || >=15.0.1}
@@ -475,6 +516,9 @@ packages:
   tinyglobby@0.2.17:
     resolution: {integrity: sha512-wXR/dYpcqKmfWpEdZjiKJOwCNFndD0DMnrW/cYjVGttEkBfVgcLFHoNrlj47mjOVic9yyNu65alsgF4NQyTa2g==}
     engines: {node: '>=12.0.0'}
+
+  tslib@2.8.1:
+    resolution: {integrity: sha512-oJFu94HQb+KVduSUQL7wnpmqnfmLsOA/nAh6b6EH0wCEoK0/mPeXU6c3wKDV83MkOuHPRHtSXKKU99IBazS/2w==}
 
   vite@8.3.1:
     resolution: {integrity: sha512-/bvH9E9tmCXRGp2uXY3WbOldqpTwFkbha/8ANaEQ6VkxhH60KyqLwgZq6lG2y+4uT55x9+9eUHMpQ7uGnOCKjA==}
@@ -520,6 +564,11 @@ packages:
         optional: true
 
 snapshots:
+
+  '@gsap/react@2.1.2(gsap@3.15.0)(react@19.3.0)':
+    dependencies:
+      gsap: 3.15.0
+      react: 19.3.0
 
   '@oxc-project/types@0.151.0': {}
 
@@ -575,14 +624,27 @@ snapshots:
       '@rolldown/pluginutils': 1.0.1
       vite: 8.3.1
 
+  canvas-confetti@1.9.4: {}
+
   detect-libc@2.1.2: {}
 
   fdir@6.5.0(picomatch@4.0.7):
     optionalDependencies:
       picomatch: 4.0.7
 
+  framer-motion@13.4.6(react-dom@19.3.0(react@19.3.0))(react@19.3.0):
+    dependencies:
+      motion-dom: 13.4.5
+      motion-utils: 13.3.0
+      tslib: 2.8.1
+    optionalDependencies:
+      react: 19.3.0
+      react-dom: 19.3.0(react@19.3.0)
+
   fsevents@2.3.3:
     optional: true
+
+  gsap@3.15.0: {}
 
   lightningcss-android-arm64@1.33.0:
     optional: true
@@ -637,6 +699,12 @@ snapshots:
     dependencies:
       react: 19.3.0
 
+  motion-dom@13.4.5:
+    dependencies:
+      motion-utils: 13.3.0
+
+  motion-utils@13.3.0: {}
+
   nanoid@3.3.19: {}
 
   picocolors@1.1.1: {}
@@ -685,6 +753,8 @@ snapshots:
     dependencies:
       fdir: 6.5.0(picomatch@4.0.7)
       picomatch: 4.0.7
+
+  tslib@2.8.1: {}
 
   vite@8.3.1:
     dependencies:

@@ -3,100 +3,140 @@ export const PRODUCTS = [
     id: 1,
     name: 'Ambar',
     category: 'Conjuntos',
+    tag: 'Más Vendido',
     price: 15.99,
     originalPrice: 20.99,
     rating: 5,
+    reviewsCount: 28,
+    sizes: ['85', '90', '95', '100'],
+    colors: ['#111', '#b31398', '#800020'],
     image: '/Imagenes/product1.jpg',
-    description: 'Conjunto delicado en encaje de alta calidad con detalles sutiles. Diseñado para ofrecer confort y seducción en un solo modelo.'
+    description: 'Conjunto delicado en encaje de alta calidad con arneses sutiles y copas balconette. Diseñado para ofrecer soporte ergonómico y máxima seducción.'
   },
   {
     id: 2,
     name: 'Lady Black',
     category: 'Lencería Fina',
+    tag: 'Edición Especial',
     price: 20.99,
     originalPrice: 25.99,
     rating: 5,
+    reviewsCount: 42,
+    sizes: ['85', '90', '95', '100', '105'],
+    colors: ['#000', '#222'],
     image: '/Imagenes/products2.jpg',
-    description: 'Diseño elegante y sofisticado en tono negro azabache. Destaca por sus acabados de encaje premium y calce perfecto.'
+    description: 'Diseño ultra elegante en tono negro azabache. Destaca por sus finos bordados florales en blonda de tul y breteles satinados ajustables.'
   },
   {
     id: 3,
     name: 'Hell Black',
     category: 'Lencería Fina',
+    tag: 'Tendencia',
     price: 25.99,
     originalPrice: 30.99,
     rating: 5,
+    reviewsCount: 35,
+    sizes: ['85', '90', '95', '100'],
+    colors: ['#13131a', '#4a0033'],
     image: '/Imagenes/products3.jpg',
-    description: 'Sensualidad audaz y misterio. Confeccionado en microfibra elastizada y puntilla sutil para destacar tu belleza natural.'
+    description: 'Sensualidad audaz y misteriosa. Confeccionado en microfibra elastizada con transparencias estratégicas que estilizan la figura.'
   },
   {
     id: 4,
     name: 'Mamba',
     category: 'Conjuntos',
+    tag: 'Exclusivo',
     price: 30.99,
     originalPrice: 35.99,
     rating: 5,
+    reviewsCount: 19,
+    sizes: ['90', '95', '100'],
+    colors: ['#0d0d14', '#990033'],
     image: '/Imagenes/products4.jpg',
-    description: 'Estilo moderno con correas ajustables y transparencia tentadora. Ideal para ocasiones donde quieres sentirte única.'
+    description: 'Estilo vanguardista con correas elásticas y terminaciones doradas antioxidantes. Ideal para sentirte poderosa y radiante.'
   },
   {
     id: 5,
     name: 'Lady Red',
     category: 'Novedades',
+    tag: 'Pasión',
     price: 35.99,
     originalPrice: 40.99,
     rating: 5,
+    reviewsCount: 56,
+    sizes: ['85', '90', '95', '100', '105'],
+    colors: ['#cc0000', '#990000'],
     image: '/Imagenes/products5.jpg',
-    description: 'El clásico rojo pasión reinventado. Detalles de encaje floral bordado y estructura con soporte delicado.'
+    description: 'El clásico rojo pasión en versión de alta gama. Puntilla elástica con relieve velvet y ballenas flexibles para un calce inolvidable.'
   },
   {
     id: 6,
     name: 'Carmesí',
     category: 'Novedades',
+    tag: 'Nuevo',
     price: 40.99,
     originalPrice: 45.99,
     rating: 5,
+    reviewsCount: 23,
+    sizes: ['85', '90', '95'],
+    colors: ['#800000', '#4a0000'],
     image: '/Imagenes/prodcuts6.jpg',
-    description: 'Lencería exclusiva teñida en Carmesí profundo. Material ultra suave que abraza la silueta con elegancia.'
+    description: 'Pieza de autor teñida en carmesí real. Tejido de seda sintética transpirable con detalles en encaje francés.'
   },
   {
     id: 7,
     name: 'Ruby',
     category: 'Lencería Fina',
+    tag: 'Alta Costura',
     price: 45.99,
     originalPrice: 50.99,
     rating: 5,
+    reviewsCount: 31,
+    sizes: ['85', '90', '95', '100'],
+    colors: ['#b3003b', '#1a000d'],
     image: '/Imagenes/products7.jpg',
-    description: 'Pieza de colección inspirada en la gema de rubí. Tul transparente con apliques de blonda italiana.'
+    description: 'Pieza de colección inspirada en la gema de rubí. Tul invisible con apliques calados a mano y cierre de broches reforzados.'
   },
   {
     id: 8,
     name: 'Piquancy',
     category: 'Novedades',
+    tag: 'Atrevido',
     price: 50.99,
     originalPrice: 55.99,
     rating: 5,
+    reviewsCount: 14,
+    sizes: ['90', '95', '100', '105'],
+    colors: ['#111', '#550044'],
     image: '/Imagenes/products8.jpg',
-    description: 'Atrevido y sofisticado. Diseño innovador con arneses suaves y encaje traslúcido para potenciar tu seguridad.'
+    description: 'Atrevido y libre de prejuicios. Arneses ajustables al torso y encaje ultra suave que brinda contención sin perder sensualidad.'
   },
   {
     id: 9,
     name: 'Donma',
     category: 'Conjuntos',
+    tag: 'Premium',
     price: 55.99,
     originalPrice: 60.99,
     rating: 5,
+    reviewsCount: 48,
+    sizes: ['85', '90', '95', '100'],
+    colors: ['#000', '#d91ba9'],
     image: '/Imagenes/products9.jpg',
-    description: 'Conjunto completo de alta gama. Suavidad extrema, breteles satinados y caída impecable.'
+    description: 'Conjunto completo de lujo. Incluye bralette con base ancha y colaless regulable en satén de seda fluida.'
   },
   {
     id: 10,
     name: 'Intense',
     category: 'Lencería Fina',
+    tag: 'Colección Privada',
     price: 60.99,
     originalPrice: 65.99,
     rating: 5,
+    reviewsCount: 64,
+    sizes: ['85', '90', '95', '100', '105'],
+    colors: ['#12121c', '#900C3F'],
     image: '/Imagenes/products10.jpg',
-    description: 'La máxima expresión del lujo sensual. Diseñado para momentos inolvidables con textiles de edición limitada.'
+    description: 'La máxima expresión del glamour íntimo. Confección artesanal de edición limitada con acabados de encaje tridimensional.'
   }
 ];

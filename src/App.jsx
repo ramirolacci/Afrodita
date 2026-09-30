@@ -6,14 +6,52 @@ import Catalog from './components/Catalog';
 import Contact from './components/Contact';
 import Footer from './components/Footer';
 import WhatsAppFloat from './components/WhatsAppFloat';
+import CartDrawer from './components/CartDrawer';
 
 export default function App() {
   const [searchOpen, setSearchOpen] = useState(false);
   const [searchQuery, setSearchQuery] = useState('');
   const [cartItems, setCartItems] = useState([]);
+  const [isCartOpen, setIsCartOpen] = useState(false);
 
   const handleAddToCart = (product, size) => {
-    setCartItems((prev) => [...prev, { ...product, selectedSize: size }]);
+    setCartItems((prev) => {
+      const existingIndex = prev.findIndex(
+        (item) => item.id === product.id && item.selectedSize === size
+      );
+      if (existingIndex > -1) {
+        const updated = [...prev];
+        updated[existingIndex].quantity += 1;
+        return updated;
+      } else {
+        return [...prev, { ...product, selectedSize: size, quantity: 1 }];
+      }
+    });
+    setIsCartOpen(true);
+  };
+
+  const handleUpdateQuantity = (id, size, newQty) => {
+    if (newQty <= 0) {
+      handleRemoveItem(id, size);
+      return;
+    }
+    setCartItems((prev) =>
+      prev.map((item) =>
+        item.id === id && item.selectedSize === size
+          ? { ...item, quantity: newQty }
+          : item
+      )
+    );
+  };
+
+  const handleRemoveItem = (id, size) => {
+    setCartItems((prev) =>
+      prev.filter((item) => !(item.id === id && item.selectedSize === size))
+    );
+  };
+
+  const handleClearCart = () => {
+    setCartItems([]);
   };
 
   return (
@@ -23,11 +61,12 @@ export default function App() {
         setSearchOpen={setSearchOpen}
         searchQuery={searchQuery}
         setSearchQuery={setSearchQuery}
-        cartCount={cartItems.length}
+        cartCount={cartItems.reduce((acc, item) => acc + item.quantity, 0)}
+        onOpenCart={() => setIsCartOpen(true)}
       />
       
       <main>
-        <Hero />
+        <Hero onOpenCart={() => setIsCartOpen(true)} />
         <About />
         <Catalog
           searchQuery={searchQuery}
@@ -39,6 +78,15 @@ export default function App() {
 
       <Footer />
       <WhatsAppFloat />
+
+      <CartDrawer
+        isOpen={isCartOpen}
+        onClose={() => setIsCartOpen(false)}
+        cartItems={cartItems}
+        onUpdateQuantity={handleUpdateQuantity}
+        onRemoveItem={handleRemoveItem}
+        onClearCart={handleClearCart}
+      />
     </div>
   );
 }

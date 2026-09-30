@@ -1,62 +1,97 @@
 .contact-wrapper {
   display: flex;
-  background: var(--card-bg);
-  border: var(--border);
-  border-radius: 2.5rem;
+  border-radius: 3rem;
   overflow: hidden;
-  box-shadow: 0 15px 40px rgba(0, 0, 0, 0.4);
+  box-shadow: 0 20px 50px rgba(0, 0, 0, 0.6);
 }
 
-.map-card {
+.contact-info-panel {
   flex: 1 1 45rem;
-  position: relative;
+  padding: 4rem;
+  background: rgba(12, 12, 20, 0.95);
+  border-right: 1px solid rgba(255, 255, 255, 0.08);
   display: flex;
   flex-direction: column;
+  gap: 2.5rem;
 }
 
-.location-info {
+.info-header h3 {
+  font-family: var(--font-heading);
+  font-size: 3.6rem;
+  color: #fff;
+  font-weight: 700;
+  margin: 0.5rem 0 1rem;
+}
+
+.info-header p {
+  font-size: 1.5rem;
+  color: var(--text-secondary);
+}
+
+.contact-details-list {
+  display: flex;
+  flex-direction: column;
+  gap: 1.8rem;
+}
+
+.detail-card {
   display: flex;
   align-items: center;
-  gap: 1.2rem;
-  background: rgba(13, 13, 20, 0.9);
+  gap: 1.5rem;
+  background: rgba(255, 255, 255, 0.03);
+  border: 1px solid rgba(255, 255, 255, 0.08);
   padding: 1.5rem 2rem;
-  border-bottom: var(--border);
+  border-radius: 1.8rem;
+  transition: var(--transition);
 }
 
-.loc-icon {
-  color: var(--main-color);
+.detail-card:hover {
+  border-color: rgba(217, 27, 169, 0.4);
+  background: rgba(217, 27, 169, 0.05);
 }
 
-.location-info h4 {
-  font-size: 1.6rem;
+.detail-icon {
+  background: linear-gradient(135deg, var(--main-color), var(--main-color-dark));
+  color: #fff;
+  padding: 1rem;
+  border-radius: 1.2rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-shadow: 0 4px 15px var(--main-color-glow);
+}
+
+.detail-card h4 {
+  font-size: 1.5rem;
   color: #fff;
   font-weight: 600;
 }
 
-.location-info p {
+.detail-card p {
   font-size: 1.3rem;
-  color: var(--text-secondary);
+  color: var(--text-muted);
 }
 
-.contact-wrapper .map {
+.map-iframe {
   width: 100%;
-  height: 100%;
-  min-height: 38rem;
-  border: none;
+  height: 20rem;
+  border-radius: 2rem;
+  border: 1px solid rgba(217, 27, 169, 0.3);
   filter: invert(90%) hue-rotate(180deg) contrast(1.2);
+  margin-top: auto;
 }
 
 .contact-form {
   flex: 1 1 45rem;
-  padding: 4rem 3rem;
+  padding: 4rem;
   display: flex;
   flex-direction: column;
   justify-content: center;
 }
 
 .contact-form h3 {
-  text-transform: uppercase;
-  font-size: 3rem;
+  font-family: var(--font-heading);
+  font-size: 3.4rem;
   color: #fff;
   font-weight: 700;
   margin-bottom: 0.5rem;
@@ -65,52 +100,58 @@
 .form-sub {
   font-size: 1.4rem;
   color: var(--text-secondary);
-  margin-bottom: 2.5rem;
+  margin-bottom: 3rem;
 }
 
 .success-toast {
   display: flex;
   align-items: center;
-  gap: 1rem;
+  gap: 1.2rem;
   background: rgba(37, 211, 102, 0.15);
   border: 1px solid #25d366;
   color: #25d366;
-  padding: 1.2rem 1.8rem;
-  border-radius: 1.5rem;
+  padding: 1.4rem 2rem;
+  border-radius: 1.8rem;
   font-size: 1.4rem;
   font-weight: 600;
   margin-bottom: 2rem;
-  animation: fadeIn 0.3s ease;
+  box-shadow: 0 0 20px rgba(37, 211, 102, 0.2);
 }
 
 .contact-form .inputBox {
   display: flex;
   align-items: center;
-  margin-bottom: 1.8rem;
+  margin-bottom: 2rem;
   background: rgba(255, 255, 255, 0.04);
   border: 1px solid rgba(255, 255, 255, 0.12);
   border-radius: 1.8rem;
-  padding: 0 1.5rem;
+  padding: 0 1.8rem;
   transition: var(--transition);
 }
 
 .contact-form .inputBox:focus-within {
   border-color: var(--main-color);
-  box-shadow: 0 0 15px var(--main-color-glow);
-  background: rgba(217, 27, 169, 0.05);
+  box-shadow: 0 0 20px var(--main-color-glow);
+  background: rgba(217, 27, 169, 0.06);
 }
 
 .contact-form .inputBox .input-icon {
-  color: var(--main-color);
+  color: var(--main-color-light);
   flex-shrink: 0;
 }
 
-.contact-form .inputBox input {
+.contact-form .inputBox input,
+.contact-form .inputBox textarea {
   width: 100%;
-  padding: 1.6rem 1.2rem;
-  font-size: 1.6rem;
+  padding: 1.8rem 1.4rem;
+  font-size: 1.5rem;
   color: #fff;
   background: transparent;
+  resize: none;
+}
+
+.textarea-box {
+  padding: 0.5rem 1.8rem !important;
 }
 
 .submit-btn {
@@ -121,5 +162,10 @@
 @media (max-width: 991px) {
   .contact-wrapper {
     flex-direction: column;
+  }
+
+  .contact-info-panel,
+  .contact-form {
+    padding: 3rem 2rem;
   }
 }
