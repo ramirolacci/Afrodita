@@ -1,85 +1,75 @@
-import React, { useState } from 'react';
-import { User, Mail, Phone, MessageCircle, CheckCircle2, MapPin, Sparkles, Clock, Send } from 'lucide-react';
+import React from 'react';
+import { MapPin, Clock, Sparkles, ExternalLink } from 'lucide-react';
 import ScrollReveal from './ScrollReveal';
-import confetti from 'canvas-confetti';
 import './Contact.css';
 
 export default function Contact() {
-  const [formData, setFormData] = useState({
-    fullName: '',
-    email: '',
-    phone: '',
-    message: ''
-  });
-
-  const [submitted, setSubmitted] = useState(false);
-
-  const handleChange = (e) => {
-    setFormData({ ...formData, [e.target.name]: e.target.value });
-  };
-
-  const handleSubmit = (e) => {
-    e.preventDefault();
-    if (!formData.fullName || !formData.phone) return;
-
-    confetti({
-      particleCount: 60,
-      spread: 60,
-      origin: { y: 0.7 }
-    });
-
-    const messageText = `¡Hola Afrodita Lingerie! Mi nombre es *${formData.fullName}*.\n📞 Teléfono: ${formData.phone}\n✉️ Email: ${formData.email || 'No especificado'}\n💬 Mensaje: ${formData.message || 'Deseo consultar sobre sus modelos y talles.'}`;
-    const whatsappUrl = `https://wa.me/543875825227?text=${encodeURIComponent(messageText)}`;
-    
-    setSubmitted(true);
-    setTimeout(() => {
-      window.open(whatsappUrl, '_blank');
-      setSubmitted(false);
-      setFormData({ fullName: '', email: '', phone: '', message: '' });
-    }, 1200);
-  };
+  const whatsappUrl = "https://wa.link/kdpn3h";
 
   return (
     <section className="contact" id="contact">
       <ScrollReveal direction="up">
-        <h2 className="heading"> <span>Contacta</span> con Nosotros </h2>
+        <h2 className="heading"> <span>Contacto</span> Directo </h2>
       </ScrollReveal>
 
       <ScrollReveal direction="up" delay={0.1}>
-        <div className="contact-wrapper glass-panel">
-          <div className="contact-info-panel">
-            <div className="info-header">
-              <span className="subtitle-tag"><Sparkles size={16} /> Atención Personalizada</span>
-              <h3>Visítanos en Salta</h3>
-              <p>Estamos listos para asesorarte en la elección del talle y modelo perfecto para vos.</p>
+        <div className="contact-main-card glass-panel">
+          <div className="contact-hero-content">
+            <div className="subtitle-tag">
+              <Sparkles size={16} /> Atención Exclusiva
+            </div>
+            
+            <h3>¿Tienes alguna duda sobre tu talle o modelo?</h3>
+            <p className="contact-desc">
+              Comunícate directamente con nosotros por WhatsApp. Te brindamos asesoría personalizada en tiempo real, catálogo de stock actualizado y coordinación de envíos en Salta y todo el país.
+            </p>
+
+            <a
+              href={whatsappUrl}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="contact-whatsapp-hero-btn"
+            >
+              <svg className="whatsapp-btn-svg" viewBox="0 0 32 32" width="24" height="24" fill="currentColor">
+                <path d="M16 2a13 13 0 0 0-11 20L3 29l7.3-1.9A13 13 0 1 0 16 2zm0 23.8a10.8 10.8 0 0 1-5.5-1.5l-.4-.2-4.3 1.1 1.1-4.2-.3-.4a10.8 10.8 0 1 1 9.4 5.2zm5.9-8.1c-.3-.2-1.9-1-2.2-1.1-.3-.1-.5-.2-.7.2s-.8 1-.9 1.2-.3.2-.6.1a8 8 0 0 1-2.4-1.5 8.9 8.9 0 0 1-1.7-2.1c-.2-.3 0-.5.1-.6l.4-.5c.1-.2.2-.4.3-.5.1-.2 0-.4 0-.5s-.7-1.7-1-2.3c-.3-.6-.6-.5-.8-.5h-.7c-.2 0-.6.1-.9.4s-1.2 1.2-1.2 2.9 1.3 3.3 1.5 3.5c.2.3 2.5 3.8 6 5.3.8.4 1.5.6 2 .7.8.3 1.6.2 2.2.1.7-.1 1.9-.8 2.2-1.5.3-.7.3-1.4.2-1.5-.1-.2-.3-.3-.6-.5z" />
+              </svg>
+              <span>Hablar por WhatsApp Ahora</span>
+              <ExternalLink size={18} />
+            </a>
+          </div>
+
+          <div className="contact-grid-info">
+            <div className="info-box">
+              <div className="info-box-icon"><MapPin size={24} /></div>
+              <div className="info-box-text">
+                <h4>Ubicación</h4>
+                <p>San Luis 1957, Salta, Argentina</p>
+              </div>
             </div>
 
-            <div className="contact-details-list">
-              <div className="detail-card">
-                <div className="detail-icon"><MapPin size={22} /></div>
-                <div>
-                  <h4>Dirección</h4>
-                  <p>San Luis 1957, Salta, Argentina</p>
-                </div>
-              </div>
-
-              <div className="detail-card">
-                <div className="detail-icon"><MessageCircle size={22} /></div>
-                <div>
-                  <h4>WhatsApp Directo</h4>
-                  <p>+54 387 582-5227</p>
-                </div>
-              </div>
-
-              <div className="detail-card">
-                <div className="detail-icon"><Clock size={22} /></div>
-                <div>
-                  <h4>Horario de Atención</h4>
-                  <p>Lunes a Sábados: 09:00 - 20:00 hs</p>
-                </div>
+            <div className="info-box">
+              <div className="info-box-icon"><Clock size={24} /></div>
+              <div className="info-box-text">
+                <h4>Horarios</h4>
+                <p>Lunes a Sábados: 09:00 - 20:00 hs</p>
               </div>
             </div>
 
+            <a 
+              href="https://www.instagram.com/lenceriaafrodita2021/?utm_source=qr" 
+              target="_blank" 
+              rel="noopener noreferrer" 
+              className="info-box info-box-link"
+            >
+              <div className="info-box-icon insta-icon"><i className="fab fa-instagram" style={{ fontSize: '2.4rem' }}></i></div>
+              <div className="info-box-text">
+                <h4>Instagram</h4>
+                <p>@lenceriaafrodita2021</p>
+              </div>
+            </a>
+          </div>
+
+          <div className="map-container">
             <iframe
               title="Ubicación Afrodita Lingerie Salta"
               className="map-iframe"
@@ -89,67 +79,6 @@ export default function Contact() {
               referrerPolicy="no-referrer-when-downgrade"
             ></iframe>
           </div>
-
-          <form onSubmit={handleSubmit} className="contact-form">
-            <h3>Envíanos un mensaje</h3>
-            <p className="form-sub">Completá tus datos y te responderemos al instante por WhatsApp.</p>
-
-            {submitted && (
-              <div className="success-toast">
-                <CheckCircle2 size={22} />
-                <span>¡Mensaje preparado! Redirigiendo a WhatsApp...</span>
-              </div>
-            )}
-
-            <div className="inputBox">
-              <User className="input-icon" size={20} />
-              <input
-                type="text"
-                name="fullName"
-                placeholder="Nombre completo"
-                required
-                value={formData.fullName}
-                onChange={handleChange}
-              />
-            </div>
-
-            <div className="inputBox">
-              <Mail className="input-icon" size={20} />
-              <input
-                type="email"
-                name="email"
-                placeholder="Correo electrónico (opcional)"
-                value={formData.email}
-                onChange={handleChange}
-              />
-            </div>
-
-            <div className="inputBox">
-              <Phone className="input-icon" size={20} />
-              <input
-                type="tel"
-                name="phone"
-                placeholder="Teléfono / WhatsApp"
-                required
-                value={formData.phone}
-                onChange={handleChange}
-              />
-            </div>
-
-            <div className="inputBox textarea-box">
-              <textarea
-                name="message"
-                placeholder="Escribe tu consulta o pedido especial..."
-                rows="3"
-                value={formData.message}
-                onChange={handleChange}
-              ></textarea>
-            </div>
-
-            <button type="submit" className="btn submit-btn">
-              <Send size={18} /> Enviar Consulta por WhatsApp
-            </button>
-          </form>
         </div>
       </ScrollReveal>
     </section>

@@ -1,108 +1,202 @@
 .footer {
-  background: #040406;
-  border-top: var(--border);
-  text-align: center;
-  padding: 4rem 2rem 2rem;
-  margin-top: 4rem;
+  position: relative;
+  background: #040407;
+  border-top: 1px solid rgba(255, 255, 255, 0.08);
+  padding: 6rem 7% 3rem;
+  margin-top: 8rem;
+  overflow: hidden;
 }
 
-.footer-top {
+.footer-glow {
+  position: absolute;
+  bottom: 0;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 60rem;
+  height: 20rem;
+  background: radial-gradient(circle at center, rgba(217, 27, 169, 0.12) 0%, transparent 70%);
+  pointer-events: none;
+}
+
+.footer-content {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 4rem;
+  padding-bottom: 4rem;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+  position: relative;
+  z-index: 2;
+}
+
+.footer-brand {
+  max-width: 38rem;
+}
+
+.footer-logo {
+  display: flex;
+  align-items: center;
+  gap: 1.2rem;
+  text-decoration: none;
+  margin-bottom: 1.5rem;
+}
+
+.footer-logo img {
+  height: 4.5rem;
+  width: auto;
+  filter: drop-shadow(0 0 10px var(--main-color-glow));
+}
+
+.footer-logo-text span {
+  font-family: var(--font-heading);
+  font-size: 2.4rem;
+  font-weight: 700;
+  letter-spacing: 3px;
+  color: #fff;
+  display: block;
+  line-height: 1;
+}
+
+.footer-logo-text small {
+  font-size: 1rem;
+  font-weight: 600;
+  letter-spacing: 4px;
+  color: var(--main-color);
+  text-shadow: 0 0 10px var(--main-color-glow);
+}
+
+.footer-tagline {
+  font-size: 1.4rem;
+  color: var(--text-muted);
+  line-height: 1.6;
+}
+
+.footer-middle {
   display: flex;
   flex-direction: column;
   align-items: center;
   gap: 2rem;
-  margin-bottom: 3rem;
-  position: relative;
 }
 
-.footer .share {
+.footer-socials {
   display: flex;
   gap: 1.5rem;
 }
 
-.footer .share a {
-  height: 4.8rem;
-  width: 4.8rem;
-  border-radius: 50%;
-  border: var(--border);
-  color: #fff;
+.social-btn {
   display: flex;
   align-items: center;
-  justify-content: center;
+  gap: 0.8rem;
+  padding: 1rem 2.2rem;
+  border-radius: 2.5rem;
+  font-size: 1.4rem;
+  font-weight: 600;
+  text-decoration: none;
+  color: #fff;
   background: rgba(255, 255, 255, 0.04);
+  border: 1px solid rgba(255, 255, 255, 0.12);
   transition: var(--transition);
 }
 
-.footer .share a:hover {
-  background: var(--main-color);
-  border-color: var(--main-color);
-  box-shadow: 0 0 25px var(--main-color-glow);
+.instagram-btn:hover {
+  background: linear-gradient(135deg, #f09433, #e6683c, #dc2743, #cc2366, #bc1888);
+  border-color: transparent;
+  box-shadow: 0 6px 20px rgba(220, 39, 67, 0.4);
   transform: translateY(-3px);
 }
 
-.footer .links {
-  display: flex;
-  justify-content: center;
-  flex-wrap: wrap;
-  gap: 1.5rem;
+.whatsapp-btn:hover {
+  background: #25d366;
+  border-color: #25d366;
+  box-shadow: 0 6px 20px rgba(37, 211, 102, 0.4);
+  transform: translateY(-3px);
 }
 
-.footer .links a {
-  padding: 0.8rem 2.2rem;
+.footer-nav {
+  display: flex;
+  gap: 2.5rem;
+}
+
+.footer-nav a {
   color: var(--text-secondary);
-  border: 1px solid rgba(255, 255, 255, 0.1);
-  border-radius: 2rem;
   font-size: 1.5rem;
   font-weight: 500;
+  text-decoration: none;
   transition: var(--transition);
 }
 
-.footer .links a:hover {
-  color: #fff;
-  background: var(--main-color);
-  border-color: var(--main-color);
-  box-shadow: 0 0 20px var(--main-color-glow);
+.footer-nav a:hover {
+  color: var(--main-color-light);
+  text-shadow: 0 0 10px var(--main-color-glow);
 }
 
-.back-to-top {
-  background: rgba(255, 255, 255, 0.05);
-  border: 1px solid rgba(255, 255, 255, 0.15);
-  color: #fff;
-  width: 4.2rem;
-  height: 4.2rem;
+.back-to-top-btn {
+  background: rgba(217, 27, 169, 0.1);
+  border: 1px solid rgba(217, 27, 169, 0.4);
+  color: var(--main-color-light);
+  width: 5rem;
+  height: 5rem;
   border-radius: 50%;
   display: flex;
   align-items: center;
   justify-content: center;
   cursor: pointer;
   transition: var(--transition);
+  box-shadow: 0 0 20px rgba(217, 27, 169, 0.2);
 }
 
-.back-to-top:hover {
+.back-to-top-btn:hover {
   background: var(--main-color);
+  color: #fff;
   border-color: var(--main-color);
   transform: translateY(-4px);
+  box-shadow: 0 8px 25px var(--main-color-glow);
 }
 
-.footer .credit {
-  font-size: 1.5rem;
-  color: #888;
-  font-weight: 300;
-  padding-top: 2rem;
-  border-top: 1px solid rgba(255, 255, 255, 0.05);
+.footer-bottom {
+  padding-top: 2.5rem;
+  text-align: center;
+  position: relative;
+  z-index: 2;
+}
+
+.credit-text {
+  font-size: 1.4rem;
+  color: var(--text-muted);
   display: flex;
   align-items: center;
   justify-content: center;
-  gap: 0.5rem;
+  gap: 0.6rem;
   flex-wrap: wrap;
 }
 
-.heart-icon {
+.heart-icon-glow {
   color: var(--main-color);
   fill: var(--main-color);
+  animation: pulseGlow 1.8s infinite;
 }
 
-.footer .credit span {
-  color: var(--main-color);
+.credit-text span {
+  color: var(--main-color-light);
   font-weight: 600;
+}
+
+@media (max-width: 991px) {
+  .footer-content {
+    flex-direction: column;
+    text-align: center;
+    gap: 3rem;
+  }
+
+  .footer-brand {
+    max-width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .footer-nav {
+    flex-wrap: wrap;
+    justify-content: center;
+  }
 }
