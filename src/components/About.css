@@ -1,0 +1,115 @@
+.about .row {
+  display: flex;
+  align-items: center;
+  background: var(--card-bg);
+  border: var(--border);
+  border-radius: 2.5rem;
+  padding: 3rem;
+  gap: 4rem;
+  box-shadow: 0 15px 40px rgba(0, 0, 0, 0.4);
+}
+
+.about .image-container {
+  flex: 1 1 40rem;
+  position: relative;
+  border-radius: 2rem;
+  overflow: hidden;
+}
+
+.about .image-glow {
+  position: absolute;
+  inset: 0;
+  background: radial-gradient(circle at center, var(--main-color-glow) 0%, transparent 70%);
+  z-index: 1;
+  pointer-events: none;
+}
+
+.about .image-container img {
+  width: 100%;
+  height: auto;
+  border-radius: 2rem;
+  object-fit: cover;
+  display: block;
+  position: relative;
+  z-index: 2;
+  transition: var(--transition);
+}
+
+.about .image-container:hover img {
+  transform: scale(1.03);
+}
+
+.about .content {
+  flex: 1 1 45rem;
+}
+
+.about .content h3 {
+  font-size: 3.2rem;
+  color: #fff;
+  font-weight: 700;
+  line-height: 1.3;
+  margin-bottom: 2rem;
+}
+
+.about .content p {
+  font-size: 1.6rem;
+  color: var(--text-secondary);
+  line-height: 1.8;
+  margin-bottom: 1.5rem;
+}
+
+.features-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(20rem, 1fr));
+  gap: 2rem;
+  margin-top: 3rem;
+}
+
+.feature-item {
+  display: flex;
+  align-items: flex-start;
+  gap: 1.2rem;
+  background: rgba(255, 255, 255, 0.03);
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  padding: 1.5rem;
+  border-radius: 1.5rem;
+  transition: var(--transition);
+}
+
+.feature-item:hover {
+  border-color: var(--main-color);
+  background: rgba(217, 27, 169, 0.08);
+  transform: translateY(-2px);
+}
+
+.feature-icon {
+  background: var(--main-color);
+  color: #fff;
+  padding: 1rem;
+  border-radius: 1rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-shadow: 0 4px 15px var(--main-color-glow);
+}
+
+.feature-item h4 {
+  font-size: 1.5rem;
+  color: #fff;
+  font-weight: 600;
+
+}
+
+.feature-item p {
+  font-size: 1.3rem;
+  color: #aaa;
+  margin: 0;
+  line-height: 1.4;
+}
+
+@media (max-width: 991px) {
+  .about .row {
+    flex-direction: column;
+    padding: 2rem;
+  }
+}

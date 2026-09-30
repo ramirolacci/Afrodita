@@ -1,0 +1,108 @@
+.footer {
+  background: #040406;
+  border-top: var(--border);
+  text-align: center;
+  padding: 4rem 2rem 2rem;
+  margin-top: 4rem;
+}
+
+.footer-top {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 2rem;
+  margin-bottom: 3rem;
+  position: relative;
+}
+
+.footer .share {
+  display: flex;
+  gap: 1.5rem;
+}
+
+.footer .share a {
+  height: 4.8rem;
+  width: 4.8rem;
+  border-radius: 50%;
+  border: var(--border);
+  color: #fff;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: rgba(255, 255, 255, 0.04);
+  transition: var(--transition);
+}
+
+.footer .share a:hover {
+  background: var(--main-color);
+  border-color: var(--main-color);
+  box-shadow: 0 0 25px var(--main-color-glow);
+  transform: translateY(-3px);
+}
+
+.footer .links {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 1.5rem;
+}
+
+.footer .links a {
+  padding: 0.8rem 2.2rem;
+  color: var(--text-secondary);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  border-radius: 2rem;
+  font-size: 1.5rem;
+  font-weight: 500;
+  transition: var(--transition);
+}
+
+.footer .links a:hover {
+  color: #fff;
+  background: var(--main-color);
+  border-color: var(--main-color);
+  box-shadow: 0 0 20px var(--main-color-glow);
+}
+
+.back-to-top {
+  background: rgba(255, 255, 255, 0.05);
+  border: 1px solid rgba(255, 255, 255, 0.15);
+  color: #fff;
+  width: 4.2rem;
+  height: 4.2rem;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  transition: var(--transition);
+}
+
+.back-to-top:hover {
+  background: var(--main-color);
+  border-color: var(--main-color);
+  transform: translateY(-4px);
+}
+
+.footer .credit {
+  font-size: 1.5rem;
+  color: #888;
+  font-weight: 300;
+  padding-top: 2rem;
+  border-top: 1px solid rgba(255, 255, 255, 0.05);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.5rem;
+  flex-wrap: wrap;
+}
+
+.heart-icon {
+  color: var(--main-color);
+  fill: var(--main-color);
+}
+
+.footer .credit span {
+  color: var(--main-color);
+  font-weight: 600;
+}
