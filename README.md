@@ -4,8 +4,8 @@
   <p><strong>Plataforma E-Commerce de Alta Costura & Elegancia Fina</strong></p>
 
   <p>
-    <img src="https://img.shields.io/badge/React-19.3-d91ba9?style=for-the-badge&logo=react&logoColor=white" alt="React 19" />
-    <img src="https://img.shields.io/badge/Vite-8.3-646CFF?style=for-the-badge&logo=vite&logoColor=white" alt="Vite" />
+    <img src="https://img.shields.io/badge/react-%2320232a.svg?style=for-the-badge&logo=react&logoColor=%2361DAFB" alt="React 19" />
+    <img src="https://img.shields.io/badge/vite-%23646CFF.svg?style=for-the-badge&logo=vite&logoColor=white" alt="Vite" />
     <img src="https://img.shields.io/badge/Framer_Motion-13.4-ff52d7?style=for-the-badge&logo=framer&logoColor=white" alt="Framer Motion" />
     <img src="https://img.shields.io/badge/Design-Glassmorphism-060609?style=for-the-badge" alt="Glassmorphism" />
   </p>
