@@ -8,47 +8,8 @@ export default function Footer() {
       <div className="footer-glow"></div>
       
       <div className="footer-grid-container">
-        {/* Left Column: Seguinos & Social Buttons */}
+        {/* Left Column: Brand Logo & Tagline */}
         <div className="footer-col footer-left-col">
-          <h4 className="footer-col-title">Seguinos</h4>
-          <div className="footer-social-buttons">
-            <a
-              href="https://www.instagram.com/lenceriaafrodita2021/?utm_source=qr"
-              target="_blank"
-              rel="noopener noreferrer"
-              className="social-pill-btn insta-btn"
-              title="Síguenos en Instagram"
-            >
-              <i className="fab fa-instagram"></i>
-              <span>Instagram</span>
-            </a>
-
-            <a
-              href="https://facebook.com"
-              target="_blank"
-              rel="noopener noreferrer"
-              className="social-pill-btn fb-btn"
-              title="Síguenos en Facebook"
-            >
-              <i className="fab fa-facebook-f"></i>
-              <span>Facebook</span>
-            </a>
-
-            <a
-              href="https://wa.link/kdpn3h"
-              target="_blank"
-              rel="noopener noreferrer"
-              className="social-pill-btn wa-btn"
-              title="Contacto por WhatsApp"
-            >
-              <i className="fab fa-whatsapp"></i>
-              <span>WhatsApp</span>
-            </a>
-          </div>
-        </div>
-
-        {/* Center Column: Brand Info */}
-        <div className="footer-col footer-center-col">
           <a href="#home" className="footer-logo">
             <img src="/Imagenes/logopestaña.png" alt="Afrodita Lingerie Logo" />
             <div className="footer-logo-text">
@@ -61,8 +22,8 @@ export default function Footer() {
           </p>
         </div>
 
-        {/* Right Column: Navigation Links */}
-        <div className="footer-col footer-right-col">
+        {/* Center Column: Navigation Links (4 and 4) */}
+        <div className="footer-col footer-center-col">
           <h4 className="footer-col-title">Navegación</h4>
           <div className="footer-links-group">
             <div className="nav-column">
@@ -74,8 +35,37 @@ export default function Footer() {
             <div className="nav-column">
               <a href="#products">Guía de Talles</a>
               <a href="#contact">Envíos & Devoluciones</a>
-              <a href="#about">Preguntas Frecuentes</a>
+              <a href="#about">FAQ</a>
+              <a href="#contact">Legales</a>
             </div>
+          </div>
+        </div>
+
+        {/* Right Column: Seguinos & Horizontal Icon-Only Social Buttons (Instagram & Facebook) */}
+        <div className="footer-col footer-right-col">
+          <h4 className="footer-col-title">Seguinos</h4>
+          <div className="footer-social-icons-row">
+            <a
+              href="https://www.instagram.com/lenceriaafrodita2021/?utm_source=qr"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="social-circle-btn insta-circle"
+              title="Síguenos en Instagram"
+              aria-label="Instagram"
+            >
+              <i className="fab fa-instagram"></i>
+            </a>
+
+            <a
+              href="https://facebook.com"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="social-circle-btn fb-circle"
+              title="Síguenos en Facebook"
+              aria-label="Facebook"
+            >
+              <i className="fab fa-facebook-f"></i>
+            </a>
           </div>
         </div>
       </div>

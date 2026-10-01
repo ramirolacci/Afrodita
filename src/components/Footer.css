@@ -20,7 +20,7 @@
 
 .footer-grid-container {
   display: grid;
-  grid-template-columns: 1fr 1.2fr 1fr;
+  grid-template-columns: 1.2fr 1fr 1fr;
   gap: 4rem;
   padding-bottom: 4rem;
   border-bottom: 1px solid rgba(255, 255, 255, 0.08);
@@ -33,78 +33,10 @@
   flex-direction: column;
 }
 
-.footer-col-title {
-  font-family: var(--font-heading);
-  font-size: 2.4rem;
-  color: #fff;
-  font-weight: 700;
-  margin-bottom: 2rem;
-  position: relative;
-  display: inline-block;
-}
-
-.footer-col-title::after {
-  content: '';
-  display: block;
-  width: 3.5rem;
-  height: 2px;
-  background: var(--main-color);
-  margin-top: 0.6rem;
-  border-radius: 2px;
-}
-
-.footer-social-buttons {
-  display: flex;
-  flex-direction: column;
-  gap: 1.2rem;
-  max-width: 20rem;
-}
-
-.social-pill-btn {
-  display: flex;
-  align-items: center;
-  gap: 1.2rem;
-  padding: 1rem 1.8rem;
-  border-radius: 2rem;
-  font-size: 1.4rem;
-  font-weight: 600;
-  color: #fff;
-  text-decoration: none;
-  background: rgba(255, 255, 255, 0.04);
-  border: 1px solid rgba(255, 255, 255, 0.1);
-  transition: var(--transition);
-}
-
-.social-pill-btn i {
-  font-size: 1.8rem;
-  width: 2rem;
-  text-align: center;
-}
-
-.insta-btn:hover {
-  background: linear-gradient(135deg, #f09433, #e6683c, #dc2743, #cc2366, #bc1888);
-  border-color: transparent;
-  box-shadow: 0 6px 20px rgba(220, 39, 67, 0.4);
-  transform: translateX(5px);
-}
-
-.fb-btn:hover {
-  background: #1877f2;
-  border-color: #1877f2;
-  box-shadow: 0 6px 20px rgba(24, 119, 242, 0.4);
-  transform: translateX(5px);
-}
-
-.wa-btn:hover {
-  background: #25d366;
-  border-color: #25d366;
-  box-shadow: 0 6px 20px rgba(37, 211, 102, 0.4);
-  transform: translateX(5px);
-}
-
-.footer-center-col {
-  align-items: center;
-  text-align: center;
+/* Left Column: Brand Logo & Tagline */
+.footer-left-col {
+  align-items: flex-start;
+  text-align: left;
 }
 
 .footer-logo {
@@ -143,18 +75,45 @@
   font-size: 1.4rem;
   color: var(--text-muted);
   line-height: 1.7;
-  max-width: 32rem;
+  max-width: 34rem;
+}
+
+/* Center Column: Navigation (Left-aligned with first column) */
+.footer-center-col {
+  align-items: flex-start;
+  text-align: left;
+}
+
+.footer-col-title {
+  font-family: var(--font-heading);
+  font-size: 2.4rem;
+  color: #fff;
+  font-weight: 700;
+  margin-bottom: 2rem;
+  position: relative;
+  display: inline-block;
+}
+
+.footer-col-title::after {
+  content: '';
+  display: block;
+  width: 3.5rem;
+  height: 2px;
+  background: var(--main-color);
+  margin: 0.6rem 0 0;
+  border-radius: 2px;
 }
 
 .footer-links-group {
   display: flex;
-  gap: 3rem;
+  gap: 3.5rem;
 }
 
 .nav-column {
   display: flex;
   flex-direction: column;
   gap: 1.2rem;
+  text-align: left;
 }
 
 .nav-column a {
@@ -169,6 +128,48 @@
   transform: translateX(3px);
 }
 
+/* Right Column: Seguinos & Single Horizontal Row of Icon Buttons */
+.footer-right-col {
+  align-items: flex-start;
+}
+
+.footer-social-icons-row {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  gap: 1.4rem;
+}
+
+.social-circle-btn {
+  width: 4.8rem;
+  height: 4.8rem;
+  border-radius: 50%;
+  background: rgba(255, 255, 255, 0.04);
+  border: 1px solid rgba(255, 255, 255, 0.12);
+  color: #fff;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 2rem;
+  text-decoration: none;
+  transition: var(--transition);
+}
+
+.insta-circle:hover {
+  background: linear-gradient(135deg, #f09433, #e6683c, #dc2743, #cc2366, #bc1888);
+  border-color: transparent;
+  box-shadow: 0 6px 22px rgba(220, 39, 67, 0.45);
+  transform: translateY(-4px);
+}
+
+.fb-circle:hover {
+  background: #1877f2;
+  border-color: #1877f2;
+  box-shadow: 0 6px 22px rgba(24, 119, 242, 0.45);
+  transform: translateY(-4px);
+}
+
+/* Bottom Bar */
 .footer-bottom-bar {
   padding-top: 2.5rem;
   text-align: center;
@@ -212,21 +213,23 @@
   }
 
   .footer-col {
-    align-items: center;
+    align-items: center !important;
+    text-align: center !important;
   }
 
-  .footer-social-buttons {
-    flex-direction: row;
+  .footer-tagline {
     max-width: 100%;
-    justify-content: center;
-    flex-wrap: wrap;
   }
 
-  .social-pill-btn:hover {
-    transform: translateY(-3px);
+  .footer-col-title::after {
+    margin: 0.6rem auto 0 !important;
   }
 
   .footer-links-group {
+    justify-content: center;
+  }
+
+  .footer-social-icons-row {
     justify-content: center;
   }
 }
