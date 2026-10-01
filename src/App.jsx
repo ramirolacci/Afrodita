@@ -7,8 +7,10 @@ import Contact from './components/Contact';
 import Footer from './components/Footer';
 import WhatsAppFloat from './components/WhatsAppFloat';
 import CartDrawer from './components/CartDrawer';
+import InfoPage from './pages/InfoPage';
 
 export default function App() {
+  const [currentPage, setCurrentPage] = useState('home');
   const [searchOpen, setSearchOpen] = useState(false);
   const [searchQuery, setSearchQuery] = useState('');
   const [cartItems, setCartItems] = useState([]);
@@ -54,39 +56,56 @@ export default function App() {
     setCartItems([]);
   };
 
+  const handleOpenInfoPage = (pageKey) => {
+    setCurrentPage(pageKey);
+    window.scrollTo(0, 0);
+  };
+
   return (
     <div className="app-container">
-      <Navbar
-        searchOpen={searchOpen}
-        setSearchOpen={setSearchOpen}
-        searchQuery={searchQuery}
-        setSearchQuery={setSearchQuery}
-        cartCount={cartItems.reduce((acc, item) => acc + item.quantity, 0)}
-        onOpenCart={() => setIsCartOpen(true)}
-      />
-      
-      <main>
-        <Hero onOpenCart={() => setIsCartOpen(true)} />
-        <About />
-        <Catalog
-          searchQuery={searchQuery}
-          setSearchQuery={setSearchQuery}
-          onAddToCart={handleAddToCart}
+      {currentPage === 'home' ? (
+        <>
+          <Navbar
+            searchOpen={searchOpen}
+            setSearchOpen={setSearchOpen}
+            searchQuery={searchQuery}
+            setSearchQuery={setSearchQuery}
+            cartCount={cartItems.reduce((acc, item) => acc + item.quantity, 0)}
+            onOpenCart={() => setIsCartOpen(true)}
+          />
+          
+          <main>
+            <Hero onOpenCart={() => setIsCartOpen(true)} />
+            <About />
+            <Catalog
+              searchQuery={searchQuery}
+              setSearchQuery={setSearchQuery}
+              onAddToCart={handleAddToCart}
+            />
+            <Contact />
+          </main>
+
+          <Footer onOpenInfoPage={handleOpenInfoPage} />
+          <WhatsAppFloat />
+
+          <CartDrawer
+            isOpen={isCartOpen}
+            onClose={() => setIsCartOpen(false)}
+            cartItems={cartItems}
+            onUpdateQuantity={handleUpdateQuantity}
+            onRemoveItem={handleRemoveItem}
+            onClearCart={handleClearCart}
+          />
+        </>
+      ) : (
+        <InfoPage
+          pageKey={currentPage}
+          onBackToHome={() => {
+            setCurrentPage('home');
+            window.scrollTo(0, 0);
+          }}
         />
-        <Contact />
-      </main>
-
-      <Footer />
-      <WhatsAppFloat />
-
-      <CartDrawer
-        isOpen={isCartOpen}
-        onClose={() => setIsCartOpen(false)}
-        cartItems={cartItems}
-        onUpdateQuantity={handleUpdateQuantity}
-        onRemoveItem={handleRemoveItem}
-        onClearCart={handleClearCart}
-      />
+      )}
     </div>
   );
 }
